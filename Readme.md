@@ -1,49 +1,50 @@
-QuickSum: Automated Text Summarizer
-An NLP-powered web app to quickly summarize articles and documents from URLs or PDF files using the T5 transformer model.
+Automated Text Summarization Engine
+1. Overview
+This project is a Natural Language Processing (NLP) application designed to generate concise, abstractive summaries from text-based content. It provides an intuitive web interface to condense information from web articles and PDF documents, making it an effective tool for rapid information extraction and analysis.
 
-![QuickSum Demo GIF]
-(Consider adding a screenshot or a GIF of your application in action here)
+The core of the application leverages a pre-trained T5 (Text-to-Text Transfer Transformer) model to ensure high-quality, human-readable summaries.
 
-✨ Features
-URL Summarization: Provide a link to any article, and the app will extract the text and generate a concise summary.
-PDF Summarization: Upload a PDF document directly from your computer to get a summary of its content.
-Simple Web Interface: Built with Streamlit for a clean, interactive, and easy-to-use experience.
-🛠️ Technologies Used
-This project leverages a modern stack of NLP and web app technologies:
-Backend: Python
-NLP Model: Google's T5 (Text-to-Text Transfer Transformer) via Hugging Face Transformers
+2. Key Features
+Web Article Summarization: Extracts text content directly from a provided URL and generates a summary.
+PDF Document Summarization: Allows users to upload a PDF file and receive a condensed version of its content.
+Interactive UI: A clean and user-friendly interface built with Streamlit for seamless interaction.
+3. Technology Stack
+The project is built using the following core technologies:
+Backend: Python 3.9
+NLP Model: T5-small (from Hugging Face Transformers)
 Web Framework: Streamlit
-Web Scraping: BeautifulSoup4, Requests
-PDF Processing: PyPDF2
-🚀 Getting Started
-Follow these instructions to set up and run the project on your local machine.
+Data Extraction:
+BeautifulSoup4 & Requests (for URL content)
+PyPDF2 (for PDF content)
+4. System Architecture
+The application follows a straightforward data processing workflow:
+Input: The user selects an input source (URL or PDF file) via the Streamlit interface.
+Text Extraction: Based on the source, the appropriate module scrapes the web page or parses the PDF to extract the raw text.
+Summarization: The extracted text is tokenized and fed into the T5 transformer model, which generates the abstractive summary.
+Output: The application displays both the original extracted text and the final summary for comparison.
+5. Local Installation and Usage
+To run this project on your local machine, please follow the steps below.
 
 Prerequisites
 Python 3.9 or higher
-pip package manager
-Installation & Setup
-Clone the repository:
+pip package installer
+Setup Instructions
+Clone the Repository
 Bash
 git clone https://github.com/Aditya7615/NLP-Project.git
 cd NLP-Project
-Create a virtual environment (recommended):
+Create and Activate a Virtual Environment (Recommended)
 Bash
 python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-Install the required dependencies:
-The requirements.txt file contains all the necessary packages.
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install Dependencies
+Install all required packages from the requirements.txt file.
 Bash
 pip install -r requirements.txt
-Run the Streamlit application:
+Launch the Application
+Run the Streamlit server.
 Bash
 streamlit run app.py
-Your browser should automatically open to the web application's local address (usually http://localhost:8501).
-
-💻 How to Use
-Once the application is running:
-Choose an option: Select either "Summarize from URL" or "Summarize from PDF" from the sidebar.
-For URL: Paste the full URL of the article you want to summarize into the text box and click "Summarize".
-For PDF: Click the "Browse files" button, select a PDF from your computer, and the summary will be generated automatically.
-View the original and summarized text side-by-side.
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+The application will be accessible at http://localhost:8501 in your web browser.
+6. License
+This project is distributed under the MIT License. See the LICENSE file for more details.
